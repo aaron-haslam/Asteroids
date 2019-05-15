@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang = "en-US">
+<head>
+    <meta charset = "UTF-8">
+    <title>Asteroids</title>
+    
+    <link rel = "stylesheet" type = "text/css" href = "styles/game.css">
+</head>
+<body onload = "MyGame.game.initialize();" style="background-color:black;">
+    <h1 id="title">Asteroids</h1>
+    <div id = "game">
+        <div id = "main-menu" class = "screen">
+            <ul class = "menu">
+                <li><button id = "id-new-game">New&nbsp;Game</button></li>
+                <li><button id = "id-high-scores">High&nbsp;Scores</button></li>
+                <li><button id = "id-help">Help</button></li>
+                <li><button id = "id-about">About</button></li>
+            </ul>
+        </div>
+        <div id = "game-play" class = "screen">
+            <canvas id = "id-canvas" width = "500" height = "500"></canvas>
+        </div>
+        <div id = "high-scores" class = "screen">
+            <h1>High Scores</h1>
+            <ol>
+                <li id="first">0</li>
+                <li id="second">0</li>
+                <li id="third">0</li>
+            </ol>
+            <ul class = "menu">
+                <li><button id = "id-high-scores-back">Back</button></li>
+            </ul>
+        </div>
+        <div id = "help" class = "screen">
+            <h1>Help</h1>
+            <p>Up Arrow: Thrust</p>
+            <p>Left Arrow: Rotate ship left</p>
+            <p>Right Arrow: Rotate ship right</p>
+            <p>Z: Warp ship to "safe" location</p>
+            <p>Spacebar: Shoot</p>
+            <ul class = "menu">
+                <li><button id = "id-help-back">Back</button></li>
+            </ul>
+        </div>
+        <div id = "about" class = "screen">
+            <h1>About</h1>
+            <p>This game was created by</p>
+            <p>Aaron Haslam</p>
+            <ul class = "menu">
+                <li><button id = "id-about-back">Back</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let MyGame = {
+            screens : {},
+            input: {},
+            objects: {},
+            render: []
+        };
+    </script>
+    <div id='audioPlayer'>
+        <h3>Background Music</h3>
+        <audio src='assets/sounds/background.mp3' controls loop></audio>
+    </div>
+    
+    
+    <script src = "scripts/objects/text.js"></script>
+    <script src = "scripts/objects/ship.js"></script>
+    <script src = "scripts/objects/asteroid.js"></script>
+    <script src = "scripts/objects/laser.js"></script>
+
+
+
+    <script src = "scripts/render/core.js"></script>
+    <script src = "scripts/render/text.js"></script>
+    <script src = "scripts/render/ship.js"></script>
+    <script src = "scripts/render/asteroid.js"></script>
+    <script src = "scripts/render/laser.js"></script>
+
+
+    <script src = "scripts/input-keyboard.js"></script>
+    <script src = "scripts/audioPlayer.js"></script>
+
+    <script src = "scripts/game.js"></script>
+    <script src = "scripts/mainmenu.js"></script>
+    <script src = "scripts/gameplay.js"></script>
+    <script src = "scripts/highscores.js"></script>
+    <script src = "scripts/help.js"></script>
+    <script src = "scripts/about.js"></script>
+
+</body>
+</html>
